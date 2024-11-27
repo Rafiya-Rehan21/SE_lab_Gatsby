@@ -12,7 +12,7 @@ module.exports = {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    siteUrl: `https://Rafiya-Rehan21.github.io/SE_lab_Gatsby`, // Update this with your GitHub username
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -32,12 +32,20 @@ module.exports = {
         short_name: `starter`,
         start_url: `/`,
         background_color: `#663399`,
-        // This will impact how browsers show your PWA/website
-        // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+
+    // New plugins for markdown files
+    {
+      resolve: "gatsby-source-filesystem",
+      options: {
+        name: "posts", // This is the name of the source
+        path: `${__dirname}/src/posts/`, // Path where markdown files are located
+      },
+    },
+    "gatsby-transformer-remark", // To transform markdown files into HTML
   ],
+  pathPrefix: "/SE_lab_Gatsby", // Add pathPrefix for GitHub Pages deployment
 }
