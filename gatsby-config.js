@@ -46,6 +46,9 @@ module.exports = {
       },
     },
     "gatsby-transformer-remark", // To transform markdown files into HTML
+    
+    // Add this plugin for SEO
+    `gatsby-plugin-react-helmet`,  // For managing SEO metadata
   ],
   pathPrefix: "/SE_lab_Gatsby", // Add pathPrefix for GitHub Pages deployment
 }

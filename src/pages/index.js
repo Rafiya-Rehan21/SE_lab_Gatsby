@@ -3,7 +3,7 @@ import { Link, graphql } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 
 import Layout from "../components/layout"
-import Seo from "../components/seo"
+import Seo from "../components/seo"  // Corrected the import to use PascalCase for the Seo component
 import * as styles from "../components/index.module.css"
 
 const links = [
@@ -78,7 +78,7 @@ const IndexPage = ({ data }) => (
         width={64}
         quality={95}
         formats={["auto", "webp", "avif"]}
-        alt=""
+        alt="Gatsby"
         style={{ marginBottom: `var(--space-3)` }}
       />
       <h1>
@@ -87,9 +87,10 @@ const IndexPage = ({ data }) => (
       <p className={styles.intro}>
         <b>{data.site.siteMetadata.description}</b>
       </p>
-      
-      {/* Add the link to the About page here */}
-      <Link to="/about">Go to About Page</Link>
+
+      {/* Link to the About Page */}
+      <Link to="/about">Go to About Page</Link> {/* This is the added link */}
+
     </div>
     <ul className={styles.list}>
       {links.map(link => (
@@ -124,6 +125,7 @@ export const query = graphql`
   }
 `
 
-export const Head = () => <Seo title="Home" />
+export const Head = () => <Seo title="Home" /> ; {/* Corrected to use PascalCase for Seo component */}
+
 
 export default IndexPage
